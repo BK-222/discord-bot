@@ -20,7 +20,7 @@ client.on('message', (msg) => {
 });
 
 client.on('messageDeleted', (msg) => {
-  msg.channel.send('Uuuuuuuuu, what are you hiding??');
+  msg.channel.send('Uuuuuuuuuu, what are you hiding??');
 });
 
 client.login(process.env.BOT_TOKEN);
