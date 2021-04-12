@@ -12,7 +12,7 @@ client.on('ready', () => {
 client.on('message', (msg) => {
   if (msg.content == 'Blonde') {
     msg.channel.send('And bouncy!');
-    msg.reply('And bouncy!');
+    //msg.reply('And bouncy!');
   }
   if (msg.content == 'I love Beato!') {
     msg.react('❤️');
