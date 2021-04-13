@@ -19,7 +19,7 @@ client.on('message', (msg) => {
   }
 });
 
-client.on('messageDeleted', (msg) => {
+client.on('messageDelete', (msg) => {
   msg.channel.send('Uuuuuuuuuu, what are you hiding??');
 });
 
