@@ -10,13 +10,13 @@ client.on('ready', () => {
 });
 
 client.on('message', (msg) => {
-  let message = msg.content.shift().toLowerCase();
+  let sent = msg.content.shift().toLowerCase();
   
-  if (message == 'blonde') {
+  if (sent == 'blonde') {
     msg.channel.send('And bouncy!');
     //msg.reply('And bouncy!');
   }
-  if (message == 'I love Beato!') {
+  if (sent == 'I love Beato!') {
     msg.react('❤️');
   }
 });
