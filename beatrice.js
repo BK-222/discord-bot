@@ -4,6 +4,10 @@ const Discord = require('discord.js');
 const client = new Discord.Client({
   partials: ['MESSAGE']
 });
+client.commands = new Discord.Collection();
+
+const deletedMessage = require('./commands/deletedMessage.js');
+client.commands.set(deletedMessage.name, deletedMessage);
 
 client.on('ready', () => {
   console.log('The bot is ready to go!');
@@ -22,7 +26,8 @@ client.on('message', (msg) => {
 });
 
 client.on('messageDelete', (msg) => {
-  msg.channel.send('Uuuuuuuuuu, what are you hiding??');
+  //msg.channel.send('Uuuuuuuuuu, what are you hiding??');
+  client.commands.get('deleted-message').execute(msg);
 });
 
 client.login(process.env.BOT_TOKEN);
