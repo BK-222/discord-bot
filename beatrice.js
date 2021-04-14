@@ -10,7 +10,7 @@ client.on('ready', () => {
 });
 
 client.on('message', (msg) => {
-  let sent = msg.content.shift().toLowerCase();
+  let sent = msg.content.toLowerCase();
   
   if (sent == 'blonde') {
     msg.channel.send('And bouncy!');
