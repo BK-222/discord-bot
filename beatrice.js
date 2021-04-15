@@ -19,22 +19,31 @@ client.on('message', (msg) => {
   
   let message = msg.content.toLowerCase();
   
-  if (message == 'blonde') {
-    msg.channel.send('And bouncy!');
-    //msg.reply('And bouncy!');
-  }
-  if (message == 'i love beato!') {
-    msg.react('❤️');
-  }
+   if (message == 'blonde') {
+     msg.channel.send('And bouncy!');
+     //msg.reply('And bouncy!');
+   }
+   if (message == 'i love beato!') {
+     msg.react('❤️');
+   }
+});
+
+client.on('message', (msg) => {
+  
+  let message = msg.content.toLowerCase();
+  
+  if (!message.startsWith(PREFIX) || msg.author.bot) return;
+  
+ 
   if (message == `${PREFIX}server`) {
     msg.channel.send(msg.guild.name);
   }
-  if (message == `${PREFIX}members`) {
+  else if (message == `${PREFIX}members`) {
     msg.channel.send(`There are ${msg.guild.memberCount} people on this island!`);
   }
-  if (message == `${PREFIX}me`) {
+  else if (message == `${PREFIX}me`) {
     msg.channel.send(`Forgot your name, ${msg.author.username}??`);
-    msg.channel.send(`${msg.author.id}`);
+    msg.channel.send(`Here's also your id #${msg.author.id}`);
   }
 });
 
