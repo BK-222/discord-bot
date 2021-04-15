@@ -9,6 +9,8 @@ client.commands = new Discord.Collection();
 const deletedMessage = require('./commands/deletedMessage.js');
 client.commands.set(deletedMessage.name, deletedMessage);
 
+const PREFIX = '$';
+
 client.on('ready', () => {
   console.log('The bot is ready to go!');
 });
@@ -22,6 +24,9 @@ client.on('message', (msg) => {
   }
   if (message == 'i love beato!') {
     msg.react('❤️');
+  }
+  if (message == `${prefix}server`) {
+    msg.channel.send(msg.guild.name);
   }
 });
 
