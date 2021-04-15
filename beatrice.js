@@ -16,6 +16,7 @@ client.on('ready', () => {
 });
 
 client.on('message', (msg) => {
+  
   let message = msg.content.toLowerCase();
   
   if (message == 'blonde') {
@@ -27,6 +28,13 @@ client.on('message', (msg) => {
   }
   if (message == `${PREFIX}server`) {
     msg.channel.send(msg.guild.name);
+  }
+  if (message == `${PREFIX}members`) {
+    msg.channel.send(`There are ${msg.guild.memberCount} people on this island!`);
+  }
+  if (message == `${PREFIX}me`) {
+    msg.channel.send(`Forgot your name, ${msg.user.author}??`);
+    msg.channel.send(`${msg.user.id}`);
   }
 });
 
