@@ -22,10 +22,10 @@ client.on('message', (msg) => {
     msg.channel.send('And bouncy!');
     //msg.reply('And bouncy!');
   }
-  else if (message == 'i love beato!') {
+  if (message == 'i love beato!') {
     msg.react('❤️');
   }
-  else if (message == `${PREFIX}server`) {
+  if (message == `${PREFIX}server`) {
     msg.channel.send(msg.guild.name);
   }
 });
