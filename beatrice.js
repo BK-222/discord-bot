@@ -40,7 +40,7 @@ client.on('message', (msg) => {
     }
     msg.channel.send(`Command name: ${command} /nArguments: ${args}`);
   } else if (command == `${PREFIX}mute`) {
-    let mentionedUser = message.mentions.users.first();
+    let mentionedUser = msg.mentions.users.first();
     msg.channel.send(`Mute: ${mentionedUser.username}`);
     return;
   }
