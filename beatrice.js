@@ -30,18 +30,31 @@ client.on('message', (msg) => {
 
 client.on('message', (msg) => {
   
-  let message = msg.content.toLowerCase();
-  
   if (!message.startsWith(PREFIX) || msg.author.bot) return;
   
+  let args = msg.content.slice(PREFIX.length).trim().split(/ +/);
+  let command = args.shift().toLowerCase();
+  
+  if (command == 'cmd') {
+    if (!args.length) {
+      return msg.channel.send(`Please input an argument, ${msg.author}`);
+    } else if (args[0] == 'cat') {
+      return message.channel.send('Meow, meow');
+    }
+    msg.channel.send(`Command name: ${command} /nArguments: ${args}`);
+  } else if (command == 'mute') {
+    let mentionedUser = message.mentions.users.first();
+    message.channel.send(`Mute: ${mentionedUser.username}`);
+    return;
+  }
  
-  if (message == `${PREFIX}server`) {
+  if (command == `${PREFIX}server`) {
     msg.channel.send(msg.guild.name);
   }
-  else if (message == `${PREFIX}members`) {
+  else if (command == `${PREFIX}members`) {
     msg.channel.send(`There are ${msg.guild.memberCount} people on this island!`);
   }
-  else if (message == `${PREFIX}me`) {
+  else if (command == `${PREFIX}me`) {
     msg.channel.send(`Forgot your name, ${msg.author.username}??`);
     msg.channel.send(`Here's also your id #${msg.author.id}`);
   }
