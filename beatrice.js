@@ -32,8 +32,8 @@ client.on('message', (msg) => {
   
   if (!message.startsWith(PREFIX) || msg.author.bot) return;
   
-  let args = msg.content.slice(PREFIX.length).trim().split(' ');
-  let command = args.shift().toLowerCase();
+  //let args = msg.content.slice(PREFIX.length).trim().split(' ');
+  //let command = args.shift().toLowerCase();
   
   
  
