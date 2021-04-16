@@ -35,18 +35,7 @@ client.on('message', (msg) => {
   let args = msg.content.slice(PREFIX.length).trim().split(/ +/);
   let command = args.shift().toLowerCase();
   
-  if (command == 'cmd') {
-    if (!args.length) {
-      return msg.channel.send(`Please input an argument, ${msg.author}`);
-    } else if (args[0] == 'cat') {
-      return message.channel.send('Meow, meow');
-    }
-    msg.channel.send(`Command name: ${command} /nArguments: ${args}`);
-  } else if (command == 'mute') {
-    let mentionedUser = message.mentions.users.first();
-    message.channel.send(`Mute: ${mentionedUser.username}`);
-    return;
-  }
+  
  
   if (command == `${PREFIX}server`) {
     msg.channel.send(msg.guild.name);
