@@ -19,16 +19,13 @@ client.on('message', (msg) => {
   
   let message = msg.content.toLowerCase();
   
-   if (message == 'blonde') {
-     msg.channel.send('And bouncy!');
-     //msg.reply('And bouncy!');
-   }
-   if (message == 'i love beato!') {
-     msg.react('❤️');
-   }
-});
-
-client.on('message', (msg) => {
+  if (message == 'blonde') {
+    msg.channel.send('And bouncy!');
+    //msg.reply('And bouncy!');
+  }
+  if (message == 'i love beato!') {
+    msg.react('❤️');
+  }
   
   if (!message.startsWith(PREFIX) || msg.author.bot) return;
   
