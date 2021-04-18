@@ -12,8 +12,8 @@ const me = require('./commands/me.js');
 const deletedMessage = require('./commands/deletedMessage.js');
 
 client.commands.set(server.name, server);
-client.commands.set(members.name, members);
-client.commands.set(me.name, me);
+//client.commands.set(members.name, members);
+//client.commands.set(me.name, me);
 client.commands.set(deletedMessage.name, deletedMessage);
 
 const PREFIX = '$';
@@ -56,10 +56,10 @@ client.on('message', (msg) => {
     client.commands.get('server').execute(msg);
   }
   else if (command == `${PREFIX}members`) {
-    client.commands.get('members').execute(msg);
+    //client.commands.get('members').execute(msg);
   }
   else if (command == `${PREFIX}me`) {
-    client.commands.get('me').execute(msg);
+    //client.commands.get('me').execute(msg);
   }
 });
 
