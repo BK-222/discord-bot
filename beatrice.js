@@ -53,7 +53,8 @@ client.on('message', (msg) => {
     client.commands.get('server').execute(msg);
   }
   else if (command == `${PREFIX}members`) {
-    client.commands.get('members').execute(msg);
+    //client.commands.get('members').execute(msg);
+    msg.channel.send(`There are ${msg.guild.memberCount} people on this island!`)
   }
   else if (command == `${PREFIX}me`) {
     client.commands.get('me').execute(msg);
