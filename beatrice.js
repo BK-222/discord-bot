@@ -6,8 +6,10 @@ const client = new Discord.Client({
 });
 client.commands = new Discord.Collection();
 
+const server = require('./commands/server.js');
 const deletedMessage = require('./commands/deletedMessage.js');
-client.commands.set(deletedMessage.name, deletedMessage);
+
+client.commands.set(server.name, server, deletedMessage.name, deletedMessage);
 
 const PREFIX = '$';
 
@@ -46,7 +48,7 @@ client.on('message', (msg) => {
   }
  
   if (command == `${PREFIX}server`) {
-    msg.channel.send(msg.guild.name);
+    client.commands.get('server').execute(msg);
   }
   else if (command == `${PREFIX}members`) {
     msg.channel.send(`There are ${msg.guild.memberCount} people on this island!`);
