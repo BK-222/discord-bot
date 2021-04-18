@@ -11,7 +11,7 @@ const members = require('./commands/members.js');
 const me = require('./commands/me.js');
 const deletedMessage = require('./commands/deletedMessage.js');
 
-client.commands.set(server, members.name, members, me.name, me,  deletedMessage.name, deletedMessage);
+client.commands.set(server.name, server, members.name, members, me.name, me,  deletedMessage.name, deletedMessage);
 
 const PREFIX = '$';
 
