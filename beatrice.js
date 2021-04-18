@@ -38,7 +38,7 @@ client.on('message', (msg) => {
     } else if (args[0] == 'cat') {
       return msg.channel.send('Meow, meow');
     }
-    msg.channel.send(`Command name: ${command} /nArguments: ${args}`);
+    msg.channel.send(`Command name: ${command} \nArguments: ${args}`);
   } else if (command == `${PREFIX}mute`) {
     let mentionedUser = msg.mentions.users.first();
     msg.channel.send(`Mute: ${mentionedUser.username}`);
