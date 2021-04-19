@@ -59,7 +59,9 @@ client.on('message', (msg) => {
     client.commands.get('members').execute(msg);
   }
   else if (command == `${PREFIX}me`) {
-    client.commands.get('me').execute(msg);
+    //client.commands.get('me').execute(msg);
+      msg.channel.send(`Forgot your name, ${msg.author.username}??`);
+      msg.channel.send(`Here's also your id #${msg.author.id}`);
   }
 });
 
