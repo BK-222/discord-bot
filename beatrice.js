@@ -6,11 +6,13 @@ const client = new Discord.Client({
 });
 client.commands = new Discord.Collection();
 
+const cmd = require('./commands/cmd.js');
 const server = require('./commands/server.js');
 const members = require('./commands/members.js');
 const nameId = require('./commands/me.js');
 const deletedMessage = require('./commands/deletedMessage.js');
 
+client.commands.set(cmd.name, cmd);
 client.commands.set(server.name, server);
 client.commands.set(members.name, members);
 client.commands.set(nameId.name, nameId);
@@ -40,12 +42,7 @@ client.on('message', (msg) => {
   let command = args.shift().toLowerCase();
   
   if (command == `${PREFIX}cmd`) {
-    if (!args.length) {
-      return msg.channel.send(`Please input an argument, ${msg.author}`);
-    } else if (args[0] == 'cat') {
-      return msg.channel.send('Meow, meow');
-    }
-    msg.channel.send(`Command name: ${command} \nArguments: ${args}`);
+    client.commands.get('cmd').execute(msg);
   } else if (command == `${PREFIX}mute`) {
     let mentionedUser = msg.mentions.users.first();
     msg.channel.send(`Mute: ${mentionedUser.username}`);
@@ -60,8 +57,6 @@ client.on('message', (msg) => {
   }
   else if (command == `${PREFIX}me`) {
     client.commands.get('nameId').execute(msg);
-      //msg.channel.send(`Forgot your name, ${msg.author.username}??`);
-      //msg.channel.send(`Here's also your id #${msg.author.id}`);
   }
 });
 
