@@ -8,13 +8,13 @@ client.commands = new Discord.Collection();
 
 const server = require('./commands/server.js');
 const members = require('./commands/members.js');
-const me = require('./commands/me.js');
+const nameId = require('./commands/me.js');
 const deletedMessage = require('./commands/deletedMessage.js');
 
 client.commands.set(server);
 client.commands.set(members);
-client.commands.set(me.name, me);
-client.commands.set(deletedMessage.name, deletedMessage);
+client.commands.set(nameId);
+client.commands.set(deletedMessage);
 
 const PREFIX = '$';
 
@@ -59,7 +59,7 @@ client.on('message', (msg) => {
     client.commands.get('members').execute(msg);
   }
   else if (command == `${PREFIX}me`) {
-    //client.commands.get('me').execute(msg);
+    client.commands.get('nameId').execute(msg);
       msg.channel.send(`Forgot your name, ${msg.author.username}??`);
       msg.channel.send(`Here's also your id #${msg.author.id}`);
   }
