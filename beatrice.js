@@ -12,7 +12,7 @@ const me = require('./commands/me.js');
 const deletedMessage = require('./commands/deletedMessage.js');
 
 client.commands.set(server);
-client.commands.set(members.name, members);
+client.commands.set(members);
 client.commands.set(me.name, me);
 client.commands.set(deletedMessage.name, deletedMessage);
 
