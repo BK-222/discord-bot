@@ -1,5 +1,5 @@
-const me = {
-  name: 'me',
+const nameId = {
+  name: 'nameId',
   description: `displays the user's name and id`,
   execute(msg) {
     msg.channel.send(`Forgot your name, ${msg.author.username}??`);
@@ -7,4 +7,4 @@ const me = {
   }
 }
 
-module.exports = me;
+module.exports = nameId;
