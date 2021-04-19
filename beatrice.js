@@ -13,7 +13,7 @@ const deletedMessage = require('./commands/deletedMessage.js');
 
 client.commands.set(server);
 client.commands.set(members);
-client.commands.set(nameId);
+//client.commands.set(nameId);
 client.commands.set(deletedMessage);
 
 const PREFIX = '$';
