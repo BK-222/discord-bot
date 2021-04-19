@@ -38,8 +38,8 @@ client.on('message', (msg) => {
   
   if (!message.startsWith(PREFIX) || msg.author.bot) return;
   
-  let args = msg.content.trim().split(/ +/);
-  let command = args.shift().toLowerCase();
+  //let args = msg.content.trim().split(/ +/);
+  //let command = args.shift().toLowerCase();
   
   if (command == `${PREFIX}cmd`) {
     client.commands.get('cmd').execute(msg);

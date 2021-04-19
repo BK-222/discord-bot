@@ -1,6 +1,8 @@
+let args = msg.content.trim().split(/ +/);
+let command = args.shift().toLowerCase();
 const cmd = {
   name: 'cmd',
-  description: `base cmd with other arguments`,
+  description: 'base cmd with other arguments' ,
   execute(msg) {
     if (!args.length) {
       return msg.channel.send(`Please input an argument, ${msg.author}`);
