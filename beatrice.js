@@ -11,7 +11,7 @@ const members = require('./commands/members.js');
 const nameId = require('./commands/me.js');
 const deletedMessage = require('./commands/deletedMessage.js');
 
-client.commands.set(server);
+client.commands.set(server.name, server);
 client.commands.set(members);
 //client.commands.set(nameId);
 client.commands.set(deletedMessage);
