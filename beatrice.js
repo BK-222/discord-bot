@@ -38,11 +38,17 @@ client.on('message', (msg) => {
   
   if (!message.startsWith(PREFIX) || msg.author.bot) return;
   
-  //let args = msg.content.trim().split(/ +/);
-  //let command = args.shift().toLowerCase();
+  let args = msg.content.trim().split(/ +/);
+  let command = args.shift().toLowerCase();
   
   if (command == `${PREFIX}cmd`) {
-    client.commands.get('cmd').execute(msg);
+    //client.commands.get('cmd').execute(msg);
+    if (!args.length) {
+      return msg.channel.send(`Please input an argument, ${msg.author}`);
+    } else if (args[0] == 'cat') {
+      return msg.channel.send('Meow, meow');
+    }
+    msg.channel.send(`Command name: ${command} \nArguments: ${args}`);
   } else if (command == `${PREFIX}mute`) {
     let mentionedUser = msg.mentions.users.first();
     msg.channel.send(`Mute: ${mentionedUser.username}`);

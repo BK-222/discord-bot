@@ -1,5 +1,3 @@
-let args = msg.content.trim().split(/ +/);
-let command = args.shift().toLowerCase();
 const cmd = {
   name: 'cmd',
   description: 'base cmd with other arguments' ,
