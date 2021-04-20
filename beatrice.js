@@ -41,7 +41,7 @@ client.on('message', (msg) => {
   let args = msg.content.trim().split(/ +/);
   let command = args.shift().toLowerCase();
   
-  if (!client.commands.has($command)) return;
+  if (!client.commands.has(command.slice(PREFIX.length))) return;
   //let command = client.commands.get(commandName);
   
   if (command == `${PREFIX}cmd`) {
