@@ -59,13 +59,13 @@ client.on('message', (msg) => {
   }
  
   if (command == `${PREFIX}server`) {
-    client.commands.get(command).execute(msg);
+    client.commands.get('server').execute(msg);
   }
   else if (command == `${PREFIX}members`) {
-    client.commands.get(command).execute(msg);
+    client.commands.get('members').execute(msg);
   }
   else if (command == `${PREFIX}me`) {
-    client.commands.get(command).execute(msg);
+    client.commands.get('nameId').execute(msg);
   }
 });
 
