@@ -59,7 +59,7 @@ client.on('message', (msg) => {
   }
  
   if (command == `${PREFIX}server`) {
-    client.commands.get('server').execute(msg);
+    client.commands.get(command.slice(PREFIX.length)).execute(msg);
   }
   else if (command == `${PREFIX}members`) {
     client.commands.get('members').execute(msg);
