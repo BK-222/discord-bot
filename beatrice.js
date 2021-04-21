@@ -38,13 +38,13 @@ client.on('message', (msg) => {
   
   if (!message.startsWith(PREFIX) || msg.author.bot) return;
   
-  let args = msg.content.trim().split(/ +/);
-  let command = args.shift().toLowerCase();
+  let args = msg.content.slice(PREFIX.length).trim().split(/ +/);
+  let commandName = args.shift().toLowerCase();
   
-  if (!client.commands.has(command.slice(PREFIX.length))) return;
-  //let command = client.commands.get(commandName);
+  if (!client.commands.has(commandName)) return;
+  let command = client.commands.get(commandName);
   
-  if (command == `${PREFIX}cmd`) {
+  if (command == `cmd`) {
     //client.commands.get('cmd').execute(msg, args);
     if (!args.length) {
       return msg.channel.send(`Please input an argument, ${msg.author}`);
@@ -59,7 +59,7 @@ client.on('message', (msg) => {
   }
  
   if (command == `${PREFIX}server`) {
-    client.commands.get(command.slice(PREFIX.length)).execute(msg);
+    client.commands.get(command).execute(msg);
   }
   else if (command == `${PREFIX}members`) {
     client.commands.get('members').execute(msg);
