@@ -1,6 +1,6 @@
-const cmd = {
-  name: 'cmd',
-  description: 'base cmd with other arguments' ,
+const argsInfo = {
+  name: 'args-info',
+  description: 'Info about arguments',
   execute(msg, args) {
     if (!args.length) {
       return msg.channel.send(`Please input an argument, ${msg.author}`);
@@ -10,5 +10,4 @@ const cmd = {
     msg.channel.send(`Command name: ${command} \nArguments: ${args}`);
   }
 }
-
-module.exports = cmd;
+module.exports = argsInfo;

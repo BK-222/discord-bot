@@ -39,19 +39,14 @@ client.on('message', (msg) => {
   if (!message.startsWith(PREFIX) || msg.author.bot) return;
   
   let args = msg.content.slice(PREFIX.length).trim().split(/ +/);
-  let commandName = args.shift().toLowerCase();
+  let command = args.shift().toLowerCase();
   
   //if (!client.commands.has(command)) return;
-  let command = client.commands.get(commandName);
+  //let command = client.commands.get(commandName);
   
   if (command == `cmd`) {
-    //client.commands.get('cmd').execute(msg, args);
-    if (!args.length) {
-      return msg.channel.send(`Please input an argument, ${msg.author}`);
-    } else if (args[0] == 'cat') {
-      return msg.channel.send('Meow, meow');
-    }
-    msg.channel.send(`Command name: ${command} \nArguments: ${args}`);
+    client.commands.get('cmd').execute(msg, args);
+    
   } else if (command == `mute`) {
     let mentionedUser = msg.mentions.users.first();
     msg.channel.send(`Mute: ${mentionedUser.username}`);
@@ -59,7 +54,7 @@ client.on('message', (msg) => {
   }
  
   if (command == `server`) {
-    command.execute(msg);
+    client.commands.get(command).execute(msg);
   }
   else if (command == `members`) {
     client.commands.get('members').execute(msg);
