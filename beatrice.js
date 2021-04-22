@@ -58,7 +58,7 @@ client.on('message', (msg) => {
     return;
   }
  
-  if (command == `${PREFIX}server`) {
+  if (command == `server`) {
     client.commands.get(command).execute(msg);
   }
   else if (command == `${PREFIX}members`) {
