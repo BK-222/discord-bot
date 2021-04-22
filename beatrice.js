@@ -41,7 +41,7 @@ client.on('message', (msg) => {
   let args = msg.content.slice(PREFIX.length).trim().split(/ +/);
   let command = args.shift().toLowerCase();
   
-  if (!client.commands.has(command)) return;
+  //if (!client.commands.has(command)) return;
   //let command = client.commands.get(commandName);
   
   if (command == `cmd`) {
@@ -53,9 +53,8 @@ client.on('message', (msg) => {
     }
     msg.channel.send(`Command name: ${command} \nArguments: ${args}`);
   } else if (command == `mute`) {
-    //let mentionedUser = msg.mentions.users.first();
-    //msg.channel.send(`Mute: ${mentionedUser.username}`);
-    msg.channel.send('does it work');
+    let mentionedUser = msg.mentions.users.first();
+    msg.channel.send(`Mute: ${mentionedUser.username}`);
     return;
   }
  
