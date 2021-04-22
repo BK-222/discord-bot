@@ -39,14 +39,14 @@ client.on('message', (msg) => {
   if (!message.startsWith(PREFIX) || msg.author.bot) return;
   
   let args = msg.content.slice(PREFIX.length).trim().split(/ +/);
-  let command = args.shift().toLowerCase();
+  let commandName = args.shift().toLowerCase();
   
   //if (!client.commands.has(command)) return;
-  //let command = client.commands.get(commandName);
+  let command = client.commands.get(commandName);
   
   if (command == `cmd`) {
-    client.commands.get(command).execute(msg, args);
-    
+    //client.commands.get(command).execute(msg, args);
+    command.execute(msg, args);
   } else if (command == `mute`) {
     let mentionedUser = msg.mentions.users.first();
     msg.channel.send(`Mute: ${mentionedUser.username}`);
