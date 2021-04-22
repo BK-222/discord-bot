@@ -45,7 +45,7 @@ client.on('message', (msg) => {
   //let command = client.commands.get(commandName);
   
   if (command == `cmd`) {
-    client.commands.get('cmd').execute(msg, args);
+    client.commands.get(command).execute(msg, args);
     
   } else if (command == `mute`) {
     let mentionedUser = msg.mentions.users.first();
