@@ -39,10 +39,10 @@ client.on('message', (msg) => {
   if (!message.startsWith(PREFIX) || msg.author.bot) return;
   
   let args = msg.content.slice(PREFIX.length).trim().split(/ +/);
-  let commandName = args.shift().toLowerCase();
+  let command = args.shift().toLowerCase();
   
-  if (!client.commands.has(commandName)) return;
-  let command = client.commands.get(commandName);
+  if (!client.commands.has(command)) return;
+  //let command = client.commands.get(commandName);
   
   if (command == `cmd`) {
     //client.commands.get('cmd').execute(msg, args);
@@ -52,7 +52,7 @@ client.on('message', (msg) => {
       return msg.channel.send('Meow, meow');
     }
     msg.channel.send(`Command name: ${command} \nArguments: ${args}`);
-  } else if (command == `${PREFIX}mute`) {
+  } else if (command == `mute`) {
     let mentionedUser = msg.mentions.users.first();
     msg.channel.send(`Mute: ${mentionedUser.username}`);
     return;
@@ -61,10 +61,10 @@ client.on('message', (msg) => {
   if (command == `server`) {
     client.commands.get(command).execute(msg);
   }
-  else if (command == `${PREFIX}members`) {
+  else if (command == `members`) {
     client.commands.get('members').execute(msg);
   }
-  else if (command == `${PREFIX}user`) {
+  else if (command == `user`) {
     client.commands.get('user').execute(msg);
   }
 });
