@@ -39,10 +39,10 @@ client.on('message', (msg) => {
   if (!message.startsWith(PREFIX) || msg.author.bot) return;
   
   let args = msg.content.slice(PREFIX.length).trim().split(/ +/);
-  let command = args.shift().toLowerCase();
+  let commandName = args.shift().toLowerCase();
   
   //if (!client.commands.has(command)) return;
-  //let command = client.commands.get(commandName);
+  let command = client.commands.get(commandName);
   
   if (command == `cmd`) {
     //client.commands.get('cmd').execute(msg, args);
@@ -59,7 +59,7 @@ client.on('message', (msg) => {
   }
  
   if (command == `server`) {
-    client.commands.get(command).execute(msg);
+    command.execute(msg);
   }
   else if (command == `members`) {
     client.commands.get('members').execute(msg);
