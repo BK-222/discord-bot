@@ -7,12 +7,14 @@ const client = new Discord.Client({
 client.commands = new Discord.Collection();
 
 const cmd = require('./commands/cmd.js');
+const mute = require('./commands/mute.js');
 const server = require('./commands/server.js');
 const members = require('./commands/members.js');
 const user = require('./commands/me.js');
 const deletedMessage = require('./commands/deletedMessage.js');
 
 client.commands.set(cmd.name, cmd);
+client.commands.set(mute.name, mute);
 client.commands.set(server.name, server);
 client.commands.set(members.name, members);
 client.commands.set(user.name, user);
