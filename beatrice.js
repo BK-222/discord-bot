@@ -49,7 +49,7 @@ client.on('message', (msg) => {
   let command = client.commands.get(commandName);
   
   try {
-    command.execute(msg, args);
+    command.execute(msg, args, Discord);
   } catch (error) {
     console.error(error);
   }
