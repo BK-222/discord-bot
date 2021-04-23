@@ -13,10 +13,10 @@ const emb = {
           { name: 'Shannon', value: 'servant', inline: false },
           { name: 'Kannon', value: 'servant', inline: false }
         )
-        .setTimestamp()
+        //.setTimestamp()
         //.setImage('https://imgur.com/a/lAetrF1')
         //.setThumbnail('https://imgur.com/a/lAetrF1');
-      return msg.channel.send(embed);
+      return msg.channel.send(`test`);
     } else if (args[0] == 'none') {
       return msg.channel.send('Crickets.');
     }
