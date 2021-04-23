@@ -46,8 +46,9 @@ client.on('message', (msg) => {
   //if (!client.commands.has(command)) return;
   let command = client.commands.get(commandName);
   
-  let embed = new Discord.MessageEmbed()
-    .setColor('#333333')
+  if (commandName == 'emb') {
+    let embed = new Discord.MessageEmbed()
+    .setColor('#ffffff')
     .setTitle('ERROR')
     .setDescription('Nothing here')
     .setFooter('Error log')
@@ -57,7 +58,10 @@ client.on('message', (msg) => {
       { name: 'Kannon', value: 'servant', inline: false }
     )
     .setTimestamp();
-  return msg.channel.send(embed); 
+    return msg.channel.send(embed); 
+  }
+  
+  
   
   try {
     command.execute(msg, args);
