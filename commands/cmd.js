@@ -7,7 +7,7 @@ const cmd = {
     } else if (args[0] == 'cat') {
       return msg.channel.send('Meow, meow');
     }
-    msg.channel.send(`Command name: ${command} \nArguments: ${args}`);
+    msg.channel.send(`Command name: ${commandName} \nArguments: ${args}`);
   }
 }
 
