@@ -1,6 +1,6 @@
 const emb = {
   name: 'emb',
-  description: 'base emb with other arguments',
+  description: 'Base emb with other arguments',
   execute(msg, args) {
     if (!args.length) {
       let embed = new Discord.MessageEmbed()
@@ -15,12 +15,12 @@ const emb = {
         )
         .setTimestamp()
         .setImage('https://imgur.com/a/lAetrF1')
-        .setThumbnail('https://imgur.com/a/lAetrF1')
+        .setThumbnail('https://imgur.com/a/lAetrF1');
       return msg.channel.send(embed);
-    } else if (args[0] == 'None') {
+    } else if (args[0] == 'none') {
       return msg.channel.send('Crickets.');
     }
-    msg.channel.send(`Command name: ${args.length} \nArguments: ${args}`);
+    msg.channel.send(`Number of arguments: ${args.length} \nArguments: ${args}`);
   }
 }
 
