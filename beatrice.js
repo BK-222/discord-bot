@@ -48,23 +48,23 @@ client.on('message', (msg) => {
   
     command.execute(msg, args);
   
-  if (command == `cmd`) {
+  //if (command == `cmd`) {
     //client.commands.get(command).execute(msg, args);
-  } else if (command == `mute`) {
-    let mentionedUser = msg.mentions.users.first();
-    msg.channel.send(`Mute: ${mentionedUser.username}`);
-    return;
-  }
+  //} else if (command == `mute`) {
+    //let mentionedUser = msg.mentions.users.first();
+    //msg.channel.send(`Mute: ${mentionedUser.username}`);
+    //return;
+  //}
  
-  if (command == `server`) {
-    client.commands.get(command).execute(msg);
-  }
-  else if (command == `members`) {
-    client.commands.get('members').execute(msg);
-  }
-  else if (command == `user`) {
-    client.commands.get('user').execute(msg);
-  }
+  //if (command == `server`) {
+    //client.commands.get(command).execute(msg);
+  //}
+  //else if (command == `members`) {
+    //client.commands.get('members').execute(msg);
+  //}
+  //else if (command == `user`) {
+    //client.commands.get('user').execute(msg);
+  //}
 });
 
 client.on('messageDelete', (msg) => {
