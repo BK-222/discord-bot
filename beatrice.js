@@ -11,6 +11,7 @@ const mute = require('./commands/mute.js');
 const server = require('./commands/server.js');
 const members = require('./commands/members.js');
 const user = require('./commands/me.js');
+const emb = require('./commands/emb.js');
 const deletedMessage = require('./commands/deletedMessage.js');
 
 client.commands.set(cmd.name, cmd);
@@ -18,6 +19,7 @@ client.commands.set(mute.name, mute);
 client.commands.set(server.name, server);
 client.commands.set(members.name, members);
 client.commands.set(user.name, user);
+client.commands.set(emb.name, emb);
 client.commands.set(deletedMessage.name, deletedMessage);
 
 const PREFIX = '$';
@@ -45,23 +47,6 @@ client.on('message', (msg) => {
   
   //if (!client.commands.has(command)) return;
   let command = client.commands.get(commandName);
-  
-  if (commandName == 'emb') {
-    let embed = new Discord.MessageEmbed()
-    .setColor('#ffffff')
-    .setTitle('ERROR')
-    .setDescription('Nothing here')
-    .setFooter('Error log')
-    .addField('Code', 'hehehe', false)
-    .addFields(
-      { name: 'Shannon', value: 'servant', inline: false },
-      { name: 'Kannon', value: 'servant', inline: false }
-    )
-    .setTimestamp();
-    return msg.channel.send(embed); 
-  }
-  
-  
   
   try {
     command.execute(msg, args);
