@@ -46,8 +46,24 @@ client.on('message', (msg) => {
   //if (!client.commands.has(command)) return;
   let command = client.commands.get(commandName);
   
-    command.execute(msg, args);
+  let embed = new Discord.MessageEmbed()
+    .setColor('#333333')
+    .setTitle('ERROR')
+    .setDescription('Nothing here')
+    .setFooter('Error log')
+    .addField('Code', 'hehehe', false)
+    .addFields(
+      { name: 'Shannon', value: 'servant', inline: false },
+      { name: 'Kannon', value: 'servant', inline: false }
+    )
+    .setTimestamp();
+  return msg.channel.send(embed); 
   
+  try {
+    command.execute(msg, args);
+  } catch (error) {
+    console.error(error);
+  }
   //if (command == `cmd`) {
     //client.commands.get(command).execute(msg, args);
   //} else if (command == `mute`) {
