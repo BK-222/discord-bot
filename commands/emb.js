@@ -14,8 +14,8 @@ const emb = {
           { name: 'Kannon', value: 'servant', inline: false }
         )
         .setTimestamp()
-        .setImage('https://imgur.com/a/lAetrF1')
-        .setThumbnail('https://imgur.com/a/lAetrF1');
+        //.setImage('https://imgur.com/a/lAetrF1')
+        //.setThumbnail('https://imgur.com/a/lAetrF1');
       return msg.channel.send(embed);
     } else if (args[0] == 'none') {
       return msg.channel.send('Crickets.');
