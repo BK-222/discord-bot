@@ -1,7 +1,7 @@
 const emb = {
   name: 'emb',
   description: 'Base emb with other arguments',
-  execute(msg, args) {
+  execute(msg, args, Discord) {
     if (!args.length) {
       let embed = new Discord.MessageEmbed()
         //.setColor('#ffffff')
