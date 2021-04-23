@@ -3,16 +3,16 @@ const emb = {
   description: 'Base emb with other arguments',
   execute(msg, args) {
     if (!args.length) {
-      let embed = new Discord.MessageEmbed()
-        .setColor('#ffffff')
-        .setTitle('ERROR')
-        .setDescription('Nothing here')
-        .setFooter('Error log')
-        .addField('Code', 'Greetings!', false)
-        .addFields(
-          { name: 'Shannon', value: 'servant', inline: false },
-          { name: 'Kannon', value: 'servant', inline: false }
-        )
+      //let embed = new Discord.MessageEmbed()
+        //.setColor('#ffffff')
+        //.setTitle('ERROR')
+        //.setDescription('Nothing here')
+        //.setFooter('Error log')
+        //.addField('Code', 'Greetings!', false)
+        //.addFields(
+          //{ name: 'Shannon', value: 'servant', //inline: false },
+          //{ name: 'Kannon', value: 'servant', //inline: false }
+        //)
         //.setTimestamp()
         //.setImage('https://imgur.com/a/lAetrF1')
         //.setThumbnail('https://imgur.com/a/lAetrF1');
