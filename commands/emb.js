@@ -3,7 +3,7 @@ const emb = {
   description: 'Base emb with other arguments',
   execute(msg, args) {
     if (!args.length) {
-      //let embed = new Discord.MessageEmbed()
+      let embed = new Discord.MessageEmbed()
         //.setColor('#ffffff')
         //.setTitle('ERROR')
         //.setDescription('Nothing here')
